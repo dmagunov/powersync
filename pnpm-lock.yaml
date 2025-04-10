@@ -8,6 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@journeyapps/wa-sqlite':
+        specifier: ^1.2.2
+        version: 1.2.2
+      '@powersync/react':
+        specifier: ^1.5.2
+        version: 1.5.2(@powersync/common@1.27.1)(react@19.1.0)
+      '@powersync/web':
+        specifier: ^1.18.0
+        version: 1.18.0(@journeyapps/wa-sqlite@1.2.2)(@powersync/common@1.27.1)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -27,6 +36,9 @@ importers:
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
+      vite-plugin-wasm:
+        specifier: ^3.4.1
+        version: 3.4.1(vite@6.2.6(@types/node@22.14.0)(jiti@2.4.2))
       wxt:
         specifier: ^0.20.0
         version: 0.20.0(@types/node@22.14.0)(jiti@2.4.2)(rollup@4.39.0)
@@ -296,6 +308,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@journeyapps/wa-sqlite@1.2.2':
+    resolution: {integrity: sha512-JgXf0nvJJEP9r5AbLVYsDXlmtCHD3+U88LB4X0UZrz8urJ+OmQokSHA6eciElNFB9fXlGDa/5PdmqIbF+NT6eg==}
+
   '@jridgewell/gen-mapping@0.3.8':
     resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
     engines: {node: '>=6.0.0'}
@@ -337,6 +352,22 @@ packages:
   '@pnpm/npm-conf@2.3.1':
     resolution: {integrity: sha512-c83qWb22rNRuB0UaVCI0uRPNRr8Z0FWnEIvT47jiHAmOIUHbBOg5XvV7pM5x+rKn9HRpjxquDbXYSXr3fAKFcw==}
     engines: {node: '>=12'}
+
+  '@powersync/common@1.27.1':
+    resolution: {integrity: sha512-8gBtELtD0fPwAlHqx1lEWlz5hJCeGSsh4gb8NwNUGedU798fHEY2T93xQ4FVpKqTA9uIXtrwD3Tz12ADr8l0vA==}
+
+  '@powersync/react@1.5.2':
+    resolution: {integrity: sha512-+9HwpCwZSv0PHG6kgI9OQgOwhebS5Pa1p9ezVIFWVIPx+qaVLH2L3db/KUX0Zym5voQrLzgGUf7j6tl5lMYp+Q==}
+    peerDependencies:
+      '@powersync/common': ^1.25.0
+      react: '*'
+
+  '@powersync/web@1.18.0':
+    resolution: {integrity: sha512-Wh4d4kkxrC4m/cj0DYOUF0jlFXmxJa6xX8CSasMUfDhA2jCsTrsCuKqgeQ1K3+QCt5CgALchZBAFLZo7LbRX5Q==}
+    hasBin: true
+    peerDependencies:
+      '@journeyapps/wa-sqlite': ^1.2.2
+      '@powersync/common': ^1.27.1
 
   '@rollup/rollup-android-arm-eabi@4.39.0':
     resolution: {integrity: sha512-lGVys55Qb00Wvh8DMAocp5kIcaNzEFTmGhfFd88LfaogYTRKrdxgtlO5H6S49v2Nd8R2C6wLOal0qv6/kCkOwA==}
@@ -559,6 +590,9 @@ packages:
     resolution: {integrity: sha512-1OvF9IbWwaeiM9VhzYXVQacMibxpXOMYVNIvMtKRyX9SImBXpKcFr8XvFDeEslCyuH/t6KRt7HEO94AlP8Iatw==}
     engines: {node: '>=12'}
 
+  async-mutex@0.4.1:
+    resolution: {integrity: sha512-WfoBo4E/TbCX1G95XTjbWTE3X2XLG0m1Xbv2cwOtuPdyH9CZvnaA5nCt1ucjaKEgW2A5IF71hxrRhr83Je5xjA==}
+
   async-mutex@0.5.0:
     resolution: {integrity: sha512-1A94B18jkJ3DYq284ohPxoXbfTA5HsQ7/Mf4DEhcyLx3Bz27Rh59iScbB6EPiP+B+joue6YCxcMXSbFC1tZKwA==}
 
@@ -610,6 +644,10 @@ packages:
     resolution: {integrity: sha512-KDi1Ny1gSePi1vm0q4oxSF8b4DR44GF4BbmS2YdhPLOEqd8pDviZOGH/GsmRwoWJ2+5Lr085X7naowMwKHDG1A==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
+
+  bson@6.10.3:
+    resolution: {integrity: sha512-MTxGsqgYTwfshYWTRdmZRC+M7FnG1b4y7RO7p2k3X24Wq0yv1m77Wsj0BzlPzd/IowgESfsruQCUToa7vbOpPQ==}
+    engines: {node: '>=16.20.1'}
 
   buffer-crc32@0.2.13:
     resolution: {integrity: sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==}
@@ -733,6 +771,13 @@ packages:
 
   colorette@2.0.20:
     resolution: {integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==}
+
+  comlink@4.4.2:
+    resolution: {integrity: sha512-OxGdvBmJuNKSCMO4NTl1L47VRp6xn2wG4F/2hYzB6tiCb709otOxtEYCSvK80PtjODfXXZu8ds+Nw5kVCjqd2g==}
+
+  commander@12.1.0:
+    resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
+    engines: {node: '>=18'}
 
   commander@2.9.0:
     resolution: {integrity: sha512-bmkUukX8wAOjHdN26xj5c4ctEV22TQ7dQYhSmuckKhToXrkUn0iIaolHdIxYYqD55nhpSPA9zPQ1yP57GdXP2A==}
@@ -1313,6 +1358,9 @@ packages:
   jiti@2.4.2:
     resolution: {integrity: sha512-rg9zJN+G4n2nfJl5MW3BMygZX56zKPNVEYYqq7adpmMh4Jn2QNEwhvQlFy6jPVdcod7txZtKHWnyZiA3a0zP7A==}
     hasBin: true
+
+  js-logger@1.6.1:
+    resolution: {integrity: sha512-yTgMCPXVjhmg28CuUH8CKjU+cIKL/G+zTu4Fn4lQxs8mRFH/03QTNvEFngcxfg/gRDiQAOoyCKmMTOm9ayOzXA==}
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -2064,6 +2112,11 @@ packages:
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
 
+  vite-plugin-wasm@3.4.1:
+    resolution: {integrity: sha512-ja3nSo2UCkVeitltJGkS3pfQHAanHv/DqGatdI39ja6McgABlpsZ5hVgl6wuR8Qx5etY3T5qgDQhOWzc5RReZA==}
+    peerDependencies:
+      vite: ^2 || ^3 || ^4 || ^5 || ^6
+
   vite@6.2.6:
     resolution: {integrity: sha512-9xpjNl3kR4rVDZgPNdTL0/c6ao4km69a/2ihNQbcANz8RuCOK3hQBmLSJf3bRKVQjVMda+YvizNE8AwvogcPbw==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
@@ -2441,6 +2494,8 @@ snapshots:
   '@esbuild/win32-x64@0.25.2':
     optional: true
 
+  '@journeyapps/wa-sqlite@1.2.2': {}
+
   '@jridgewell/gen-mapping@0.3.8':
     dependencies:
       '@jridgewell/set-array': 1.2.1
@@ -2481,6 +2536,25 @@ snapshots:
       '@pnpm/config.env-replace': 1.1.0
       '@pnpm/network.ca-file': 1.0.2
       config-chain: 1.1.13
+
+  '@powersync/common@1.27.1':
+    dependencies:
+      js-logger: 1.6.1
+
+  '@powersync/react@1.5.2(@powersync/common@1.27.1)(react@19.1.0)':
+    dependencies:
+      '@powersync/common': 1.27.1
+      react: 19.1.0
+
+  '@powersync/web@1.18.0(@journeyapps/wa-sqlite@1.2.2)(@powersync/common@1.27.1)':
+    dependencies:
+      '@journeyapps/wa-sqlite': 1.2.2
+      '@powersync/common': 1.27.1
+      async-mutex: 0.4.1
+      bson: 6.10.3
+      comlink: 4.4.2
+      commander: 12.1.0
+      js-logger: 1.6.1
 
   '@rollup/rollup-android-arm-eabi@4.39.0':
     optional: true
@@ -2667,6 +2741,10 @@ snapshots:
 
   array-union@3.0.1: {}
 
+  async-mutex@0.4.1:
+    dependencies:
+      tslib: 2.8.1
+
   async-mutex@0.5.0:
     dependencies:
       tslib: 2.8.1
@@ -2725,6 +2803,8 @@ snapshots:
       electron-to-chromium: 1.5.135
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.24.4)
+
+  bson@6.10.3: {}
 
   buffer-crc32@0.2.13: {}
 
@@ -2860,6 +2940,10 @@ snapshots:
   color-name@1.1.4: {}
 
   colorette@2.0.20: {}
+
+  comlink@4.4.2: {}
+
+  commander@12.1.0: {}
 
   commander@2.9.0:
     dependencies:
@@ -3404,6 +3488,8 @@ snapshots:
   isobject@3.0.1: {}
 
   jiti@2.4.2: {}
+
+  js-logger@1.6.1: {}
 
   js-tokens@4.0.0: {}
 
@@ -4216,6 +4302,10 @@ snapshots:
       - terser
       - tsx
       - yaml
+
+  vite-plugin-wasm@3.4.1(vite@6.2.6(@types/node@22.14.0)(jiti@2.4.2)):
+    dependencies:
+      vite: 6.2.6(@types/node@22.14.0)(jiti@2.4.2)
 
   vite@6.2.6(@types/node@22.14.0)(jiti@2.4.2):
     dependencies:
